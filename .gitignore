@@ -13,9 +13,7 @@ __pycache__
 .doit.db
 .idea
 perf.data*
-cmake-*
-.submit-repo/
-CMakeLists.txt.user
+cmake-build-*
 CMakeSettings.json
 CppProperties.json
 .vs/
@@ -24,3 +22,4 @@ build_asan
 .cache/
 *.pdf
 compile_commands.json
+.clangd

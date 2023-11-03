@@ -1,6 +1,15 @@
-cmake_minimum_required(VERSION 3.22)
+cmake_minimum_required(VERSION 3.26)
+
 project(hash_map)
 
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_MODULE_PATH              "${CMAKE_SOURCE_DIR}/cmake")
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}")
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}")
+set(CMAKE_EXPORT_COMPILE_COMMANDS  ON)
 
-add_executable(hash_map unit_tests.cpp)
+include(cmake/BuildFlags.cmake)
+include(cmake/TestSolution.cmake)
+
+find_package(Catch REQUIRED)
+
+add_catch(test_hash_map test.cpp)
